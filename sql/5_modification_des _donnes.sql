@@ -14,5 +14,7 @@ SET ContactName='taha';
 DELETE FROM nom_table WHERE condition;
 -- Exemple
 DELETE FROM Customers WHERE CustomerName='hamid';
+-- Exemple
+DELETE FROM Customers WHERE  CustomerID = 3;
 -- supprimer tous les lignes
 DELETE FROM Customers;

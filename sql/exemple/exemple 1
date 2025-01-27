@@ -1,6 +1,6 @@
 
 CREATE TABLE category (
-    id INTEGER  PRIMARY KEY ,
+    id INTEGER  PRIMARY KEY  ,
     name VARCHAR(255) UNIQUE NOT NULL
 );
 
@@ -9,7 +9,7 @@ CREATE TABLE product (
     name VARCHAR(255) NOT NULL,
     price REAL CHECK (price>=1) NOT NULL,
     category_id INTEGER ,
-    FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE CASCADE
+    FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE SET NULL
     
 );
 -- Insert categories
@@ -29,5 +29,32 @@ INSERT INTO product (name, price, category_id) VALUES
 select * from product;
 select * from category;
 delete from category;
+
+-- DROP TABLE product;
+
+SELECT  avg(p.price)as product_avg  , c.name as cetegory FROM product p
+inner join category c on c.id==p.category_id
+group by cetegory
+;
+
+
+SELECT product_name  , max (max_price) as category_max_price , cetegory  from (
+SELECT   p.name as product_name , max(p.price)as max_price  , c.name as cetegory FROM product p
+inner join category c on c.id==p.category_id
+group by cetegory
+);
+
+
+SELECT * FROM product 
+ORDER BY  price DESC
+LIMIT 3
+OFFSET 3
+;
+
+
+SELECT * FROM product 
+WHERE  name is not  NULL ;
+
+
 
 

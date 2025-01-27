@@ -9,7 +9,7 @@ SELECT * FROM Customers;
 
 -- afficher les resultat sans duplication
 -- le mot clés  DISTINCT
-SELECT DISTINCT Country FROM Customers;
+SELECT DISTINCT  Country FROM Customers;
 -- filtrer les resultat  utilisant  WHERE
 SELECT * FROM Customers
 WHERE Country='Mexico';
@@ -29,7 +29,12 @@ ORDER BY Price DESC;
 -- filtrage utilisant IS NULL et IS NOT NULL
 SELECT CustomerName, ContactName, Address
 FROM Customers
-WHERE Address IS NOT NULL;
+WHERE Address IS  NULL;
 -- limiter les resultats
 SELECT * FROM Customers
+LIMIT 3;
+
+-- exemple
+SELECT * FROM Products
+ORDER BY Price DESC
 LIMIT 3;
