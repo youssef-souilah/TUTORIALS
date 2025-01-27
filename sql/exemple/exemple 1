@@ -1,0 +1,33 @@
+
+CREATE TABLE category (
+    id INTEGER  PRIMARY KEY ,
+    name VARCHAR(255) UNIQUE NOT NULL
+);
+
+CREATE TABLE product (
+    id INTEGER PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    price REAL CHECK (price>=1) NOT NULL,
+    category_id INTEGER ,
+    FOREIGN KEY (category_id) REFERENCES category(id) ON DELETE CASCADE
+    
+);
+-- Insert categories
+INSERT INTO category (name) VALUES ('Electronics'), ('Clothing'), ('Books');
+
+-- Insert products
+INSERT INTO product (name, price, category_id) VALUES 
+('Smartphone', 699.99, 1), 
+('Laptop', 1199.99, 1), 
+('T-Shirt', 19.99, 2), 
+('Jeans', 49.99, 2), 
+('Novel', 14.99, 3), 
+('Novel1', 1, 3),
+('Notebook', 9.99, 3);
+
+
+select * from product;
+select * from category;
+delete from category;
+
+

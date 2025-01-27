@@ -19,8 +19,8 @@ CREATE TABLE Persons (
     Address varchar(255),
     City varchar(255)
 );
--- DROP TABLE table_name; pour supprimer la table 
--- TRUNCATE TABLE table_name; pour supprimer le contenus d'une table  (records)
+-- DROP TABLE nom_table; pour supprimer la table 
+-- TRUNCATE TABLE nom_atble; pour supprimer le contenus d'une table  (records)
 -- modifier la structure d'une table
 ALTER TABLE Persons
 ADD Email varchar(255);
