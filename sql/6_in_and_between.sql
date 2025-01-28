@@ -16,6 +16,11 @@ SELECT column(s)
 FROM nom_table
 WHERE column IN (SELECT column FROM table2 );
 
+-- Exemple
+SELECT *
+FROM product
+WHERE category_id NOT IN (SELECT id FROM category );
+
 -- utilisant BETWEEN
 SELECT column
 FROM nom_table

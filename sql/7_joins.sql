@@ -19,5 +19,5 @@ ORDER BY Customers.CustomerName;
 -- RIGHT  JOIN
 SELECT Customers.CustomerName, Orders.id
 FROM Orders
-LEFT JOIN Customers ON  Orders.CustomerID =Customers.id 
+RIGHT JOIN Customers ON  Orders.CustomerID =Customers.id 
 ORDER BY Customers.CustomerName;

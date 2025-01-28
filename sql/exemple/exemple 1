@@ -28,7 +28,7 @@ INSERT INTO product (name, price, category_id) VALUES
 
 select * from product;
 select * from category;
-delete from category;
+delete from category where id=3;
 
 -- DROP TABLE product;
 
@@ -37,7 +37,13 @@ inner join category c on c.id==p.category_id
 group by cetegory
 ;
 
+SELECT  p.*  , c.name as cetegory FROM product p
+left join category c on c.id==p.category_id
+;
 
+SELECT  p.*  , c.name as cetegory FROM category c
+Right join product p on c.id==p.category_id
+;
 SELECT product_name  , max (max_price) as category_max_price , cetegory  from (
 SELECT   p.name as product_name , max(p.price)as max_price  , c.name as cetegory FROM product p
 inner join category c on c.id==p.category_id
@@ -56,9 +62,16 @@ SELECT * FROM product
 WHERE  name is not  NULL ;
 
 SELECT * FROM product p
-WHERE EXISTS (SELECT 1 FROM category c WHERE c.id = p.category_id AND c.name = 'Electronics' );
+WHERE EXISTS (SELECT id FROM category c WHERE c.id = p.category_id AND c.name = 'Electronics' );
 
 SELECT * FROM product p
 WHERE p.category_id IN (SELECT c.id FROM category c WHERE c.id = p.category_id AND c.name = 'Electronics' );
+
+
+SELECT * from product where price between 0 and 2000 ;
+
+
+
+
 
 

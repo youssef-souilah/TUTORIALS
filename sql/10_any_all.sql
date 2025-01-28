@@ -6,7 +6,7 @@ WHERE ProductID = ANY
   FROM OrderDetails
   WHERE Quantity = 10);
 
-  -- utilisation ANY
+  -- utilisation ALL
 SELECT ProductName
 FROM Products
 WHERE ProductID = ALL
